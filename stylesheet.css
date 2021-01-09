@@ -1,0 +1,393 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(245,245,245);
+}
+
+input[type="text"] {
+    outline: none;
+}
+
+.dNone {
+    display: none;
+}
+.dFlex {
+    display: flex;
+}
+.dInBlock {
+    display: inline-block;
+}
+
+/*Home Page Activity Stylesheet*/
+#homePage {
+    background-color: rgb(245,245,245);
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#logoContainer {
+    width: 60%;
+    height: 30%;
+}
+img {
+    width: 100%;
+    object-fit: cover;
+}
+#homePage h2 {
+    margin-bottom: 40px;
+    color: rgb(67, 97, 131);
+    font-size: 1rem;
+}
+.btnStyle {
+    color: rgb(74, 81, 107);
+    background-color: white;
+    border: 1px solid rgba(219,219,219,0.3);
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    box-shadow: 0px 8px 10px rgb(219, 219, 219);
+    width: 150px;
+    height: 43px;
+}
+.btnStyle:hover, .defactive {
+    color: white;
+    border: none;
+    background-color: rgb(66, 123, 255);
+    box-shadow: 0px 8px 10px rgb(66, 123, 255);
+}
+
+/* Offline Game Play Branch */
+/* Player Details Page Stylesheet */
+#playerDetails {
+    background-color: rgb(245,245,245);
+    height: 100vh;
+    width: 100%;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.playerDetCont {
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+}
+
+.playerDet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+}
+.imgContainer {
+    width: 40%;
+}
+#playerDetails input[type="text"] {
+    text-align: center;
+    color: rgb(74, 81, 107);
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    border-bottom: 3px solid rgb(219,219,219);
+    font-size: 1rem;
+    font-weight: 700;
+    width: 250px;
+    height: 50px;
+}
+#playerDetails input[type="text"]:hover, #playerDetails input[type="text"]:focus {
+    color: rgb(66,123,255);
+    border: none;
+    border-bottom: 3px solid rgb(66, 123, 255);
+}
+#playerDetails input[type="text"]:focus::placeholder {
+    color: white;
+}
+#playerDetails h1 {
+    margin: 0;
+    color: rgb(67, 97, 131);
+    font-size: 1.5rem;
+}
+#playerDetails h2 {
+    color: rgb(67, 97, 131);
+    font-size: 0.7rem;
+}
+
+/* Game Play Page Activity Stylesheet */
+#gameBoard {
+    background-color: rgb(245,245,245);
+    height: 100vh;
+    width: 100%;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#whoWon {
+    font-size: 1.6rem;
+    color: rgb(74, 81, 107);
+    margin-bottom: 0;
+}
+.scoreContainer {
+    color: rgb(74, 81, 107);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.playerName {
+    color: rgb(74, 81, 107);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.scoreBoard {
+    border: 1px solid rgb(219,219,219);
+    border-radius: 1rem;
+    box-shadow: 0px 8px 10px 5px rgba(219, 219, 219,0.5);
+    padding: 5px 20px;
+}
+.scoreBoard span {
+    font-size: 2rem;
+}
+.gameContainer {
+    width: 93vw;
+    height: 93vw;
+    margin-bottom: 30px;
+    border: 1px solid rgb(219,219,219);
+    border-radius: 1rem;
+    box-shadow: 0px 8px 10px 5px rgba(219, 219, 219,0.5);
+    box-sizing: border-box;
+    padding: 20px;
+    /* background-image: url("imgResources/linesBackground.png");
+    background-size: contain; */
+    display: flex;
+    flex-direction: column;
+}
+.row {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+.tile {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row:nth-of-type(2) {
+    border-top: 2px solid rgb(230,230,230);
+    border-bottom: 2px solid rgb(230,230,230);
+}
+.row .tile:nth-of-type(2) {
+    border-left: 2px solid rgb(230,230,230);
+    border-right: 2px solid rgb(230,230,230);
+}
+.tile img {
+    width: 80%;
+    visibility: hidden;
+}
+.backgr {
+    opacity: 0.5;
+}
+
+
+/* designs for background div */
+#backgrDiv {
+    opacity: 0.5;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+/* Exit Confirmation Prompt Stylesheet */
+#exitPrmpt {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    box-shadow: 0px 8px 10px 5px rgba(219, 219, 219,1);
+    border-radius: 20px;
+    background-color: rgb(245, 245, 245);
+    
+    flex-direction: column;
+    align-items: center;
+}
+#exitPrmpt h1 {
+    font-size: 1rem;
+    color: rgb(67, 97, 131);
+}
+
+/* Results Page Activity Stylesheet */
+#resPage {
+    background-color: rgb(245,245,245);
+    height: 100vh;
+    width: 100%;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#pScoreCont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#Victor {
+    font-size: 2rem;
+    color: rgb(74, 81, 107);
+}
+.playerScore {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 5%;
+    box-shadow: 0px 8px 10px 5px rgba(219, 219, 219,0.5);
+}
+.playerSymbol {
+    width: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.scoreRes {
+    width: 50%;
+}
+.scoreRes * {
+    margin-left: 10%;
+}
+.scoreRes hr {
+    width: 80%;
+    border: none;
+    border-top: 2px solid silver;
+    background-color: silver;
+}
+.fScore {
+    line-height: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #70AF85;
+}
+.fLose {
+    line-height: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #F05454;
+}
+.fDraw {
+    line-height: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: rgb(74, 81, 107);
+}
+.btnCont {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Coming Soon Activity Stylesheet */
+#comingSoon {
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(245,245,245);
+    color: rgb(74, 81, 107);
+}
+#comingSoon h1 {
+    text-align: center;
+}
+.botCont {
+    width: 50%;
+}
+
+/* Stylesheet for Mobile Site in Landscape Mode */
+@media screen and (max-width: 930px) and (orientation:landscape) {
+    #homePage, #playerDetails, #gameBoard, #exitPrmpt, #resPage, #backgrDiv, #comingSoon {
+        display: none;
+    }
+    #landscapeMode {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        font-size: 0.6rem;
+        color: rgb(74, 81, 107);
+    }
+    #landscapeMode i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablet and Desktop Site Stylesheet */
+@media only screen and (min-width: 931px) {
+    #logoContainer {
+        width: 35%;
+    }
+    .playerDetCont {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+        width: 70%;
+    }
+    .playerDet {
+        height: 100%;
+    }
+    .playerDet:nth-of-type(1) {
+        margin-right: 10%;
+    }
+    .imgContainer {
+        width: 65%;
+    }
+    #gameBoard {
+        height: 100vh;
+        width: 75vh;
+        margin: auto;
+    }
+    .gameContainer {
+        height: 65vh;
+        width: 65vh;
+    }
+    #gameBoard .btnCont {
+        flex-direction: row;
+        justify-content: center;
+        width: 50%;
+    }
+    .onceAgain {
+        margin-right: 5%;
+    }
+    #exitPrmpt {
+        width: 50%;
+    }
+    #exitPrmpt .btnCont {
+        flex-direction: row;
+        justify-content: center;
+        width: 50%;
+    }
+    #results {
+        margin-right: 5%;
+    }
+    #resPage {
+        height: 100vh;
+        width: 75vh;
+        margin: auto;
+    }
+    .botCont {
+        width: 30%;
+    }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a9a03359ce.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="imgResources/titleIcon.png">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>TicTacToe</title>
+</head>
+<body>
+    
+    <!-- Home Page Activity -->
+    <section id="homePage" class="dFlex">
+        <div id="logoContainer">
+            <img src="imgResources/logoImage.png" alt="logoImage" id="logoImg">
+        </div>
+        <h2>Choose your play mode</h2>
+        <button class="btnStyle defactive" id="playOffline">Play Offline</button>
+        <button class="btnStyle" id="withAI">With AI</button>
+        <button class="btnStyle" id="withFriend">With a Friend</button>
+    </section>
+
+    <!-- Offline Game Play Branch -->
+    <!-- Player Details Page Activity -->
+    <section id="playerDetails" class="dNone">
+        <h1>Choose your sides!</h1>
+        <h2>Enter Player Name for the respective sides to continue</h2>
+        <div class="playerDetCont">
+            <div class="playerDet">
+                <div class="imgContainer">
+                    <img src="imgResources/logoCross.png" alt="cross">
+                </div>
+                <input autocomplete="off" id="p1Name" type="text" placeholder="Who's taking X?" name="p1Name">
+            </div>
+            <div class="playerDet">
+                <div class="imgContainer">
+                    <img src="imgResources/logoCircle.png" alt="logoCircle">
+                </div>
+                <input autocomplete="off" id="p2Name" type="text" placeholder="Who's taking O?" name="p2Name">
+            </div>
+        </div>
+        <button class="btnStyle" id="continueBtn">Continue</button>
+    </section>
+
+    <!-- Game Play Page Activiy -->
+    <section id="gameBoard" class="dNone">
+        <h1 id="whoWon"></h1>
+        <!-- Score Board -->
+        <div class="scoreContainer">
+            <h1 class="playerName p1"></h1>
+            <h1 class="scoreBoard"><span id="p1Score"></span> - <span id="p2Score"></span></h1>
+            <h1 class="playerName p2"></h1>
+        </div>
+        <!-- Game Board -->
+        <div class="gameContainer">
+            <div class="row">
+                <div class="tile">
+                    <img src="imgResources/cross.png" alt="cross">
+                </div>
+                <div class="tile">
+                    <img src="imgResources/cross.png" alt="cross">
+                </div>
+                <div class="tile">
+                    <img src="imgResources/cross.png" alt="cross">
+                </div>
+            </div>
+            <div class="row">
+                <div class="tile">
+                    <img src="imgResources/cross.png" alt="cross">
+                </div>
+                <div class="tile">
+                    <img src="imgResources/cross.png" alt="cross">
+                </div>
+                <div class="tile">
+                    <img src="imgResources/cross.png" alt="cross">
+                </div>
+            </div>
+            <div class="row">
+                <div class="tile">
+                    <img src="imgResources/cross.png" alt="cross">                    
+                </div>
+                <div class="tile">
+                    <img src="imgResources/cross.png" alt="cross">
+                </div>
+                <div class="tile">
+                    <img src="imgResources/cross.png" alt="cross">
+                </div>
+            </div>
+        </div>
+        <div class="btnCont">
+            <button class="btnStyle onceAgain dNone">Once Again</button>
+            <button class="btnStyle exitBtn">Exit Game</button>
+        </div>
+    </section>
+
+    <!-- background div, used to blur and inactive the background -->
+    <div id="backgrDiv" class="dNone"></div>
+
+    <!-- Exit Confirmation Prompt -->
+    <div id="exitPrmpt" class="dNone">
+        <h1>Sure you wanna exit the game?</h1>
+        <div class="btnCont">
+            <button class="btnStyle" id="results">Yes, Exit</button>
+            <button class="btnStyle" id="noExit">No, Continue</button>
+        </div>
+    </div>
+
+    <!-- Game Results Page Activity -->
+    <section id="resPage" class="dNone">
+        <h1 id="Victor"></h1>
+        <div id="pScoreCont">
+            <div class="playerScore">
+                <div class="playerSymbol">
+                    <img src="imgResources/logoCross.png" alt="Player 1 - Cross">
+                </div>
+                <div class="scoreRes">
+                    <h2 class="playerName p1"></h2>
+                    <hr>
+                    <h2 class="fScore"></h2>
+                    <h2 class="fLose"></h2>
+                    <h2 class="fDraw"></h2>
+                </div>
+            </div>
+            <div class="playerScore">
+                <div class="playerSymbol">
+                    <img src="imgResources/logoCircle.png" alt="Player 2 - Circle">
+                </div>
+                <div class="scoreRes">
+                    <h2 class="playerName p2"></h2>
+                    <hr>
+                    <h2 class="fScore"></h2>
+                    <h2 class="fLose"></h2>
+                    <h2 class="fDraw"></h2>
+                </div>
+            </div>
+        </div>
+        <div class="btnCont">
+            <button class="btnStyle" id="newGame">New Game</button>
+            <button class="btnStyle goHome">Home</button>
+        </div>
+    </section>
+    <!--  -->
+
+    <!-- div used to (for Mobile Site in Landscape Mode) tell the user to rotate device -->
+    <div id="landscapeMode" class="dNone">
+        <h1>Please Rotate Your Device into Portait Mode</h1>
+        <i class="fas fa-sync"></i>
+    </div>
+
+    <!-- Coming Soon Section used as a placeholder for upcoming game mode branches -->
+    <section id="comingSoon" class="dNone">
+        <h1>New Game Modes - Coming Soon!</h1>
+        <div class="botCont">
+            <img src="imgResources/botWorking.png" alt="bot working">
+        </div>
+        <h1><i class="fas fa-robot"></i><br>
+            Uhh...I am Sorry!<br>
+            We are currently working here...
+        </h1>
+        <button class="btnStyle">Home</button>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
